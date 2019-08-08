@@ -842,3 +842,23 @@ Processing by PostsController#edit as HTML
 Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.1ms)
 
 
+Started PATCH "/posts/2" for 69.254.174.182 at 2019-08-08 17:50:10 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nhyaq7S2i+csDKq2hsnsz6c0oST8++vtnPIpVnuDg9CTEXJd+iVWwgWMPSyTVfH5H3zRl+3ZTVw1hQ1Kpt1M+w==", "post"=>{"title"=>"Rails Introduction bbbaaa", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2019-08-08 17:50:10.715178"], ["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://67.205.165.109:44793/posts/2
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/2" for 69.254.174.182 at 2019-08-08 17:50:10 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
